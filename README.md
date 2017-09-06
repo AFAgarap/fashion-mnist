@@ -84,6 +84,7 @@ data.train.next_batch(BATCH_SIZE)
 - [Apache MXNet Gluon (Master ver.)](https://mxnet.incubator.apache.org/versions/master/api/python/gluon.html#vision)
 - [deeplearn.js](https://pair-code.github.io/deeplearnjs/demos/model-builder/model-builder-demo.html)
 - [Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)
+- [Pytorch](https://github.com/pytorch/vision#mnist)
 
 You are welcome to make pull requests to other open-source machine learning packages, improving their support on `Fashion-MNIST` dataset.
 
@@ -124,7 +125,7 @@ The table below collects the submitted benchmarks. Note that **we haven't yet te
 |2 Conv Layers net <100K parameter | None | 0.925 | 0.992 |[@hardmaru](https://twitter.com/hardmaru) | [:link:](https://github.com/hardmaru/pytorch_notebooks/blob/master/pytorch_tiny_custom_mnist_adam.ipynb)| 
 |3 Conv layers and 2 FC | None | 0.907 | - | [@Cenk Bircanoğlu](https://github.com/cenkbircanoglu) | [:link:](https://github.com/cenkbircanoglu/openface/tree/master/fashion_mnist)|
 |GRU+SVM | None| 0.888 | 0.965 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/828fbda0e466dacb1fad66549e0e3022e1c7263a/gru_svm_zalando.py)|
-|GRU+SVM with dropout | None| 0.855 | 0.976 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/828fbda0e466dacb1fad66549e0e3022e1c7263a/gru_svm_zalando_dropout.py)|
+|GRU+SVM with dropout | None| 0.897 | 0.976 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/58dbe7cd8b0d83e4386cd6896766113b1a9af096/gru_svm_zalando_dropout.py)|
 |WRN40-4 8.9M params | standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips)| 0.967 | - |[@ajbrock](https://github.com/ajbrock) | [:link:](https://github.com/xternalz/WideResNet-pytorch)  [:link:](https://github.com/ajbrock/FreezeOut) |
 |DenseNet-BC 768K params| standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) | 0.954 | - |[@ajbrock](https://github.com/ajbrock)  | [:link:](https://github.com/bamos/densenet.pytorch)  [:link:](https://github.com/ajbrock/FreezeOut) |
 |MobileNet | augmentation (horizontal flips)| 0.950|- | [@苏剑林](https://github.com/bojone)| [:link:](http://kexue.fm/archives/4556/)|
@@ -134,6 +135,7 @@ The table below collects the submitted benchmarks. Note that **we haven't yet te
 |SqueezeNet with cyclical learning rate 200 epochs| None| 0.900| - | [@snakers4](https://github.com/snakers4) | [:link:](https://github.com/zalandoresearch/fashion-mnist/files/1263340/squeeze_net_mnist.zip)|
 |Dual path network with wide resnet 28-10|standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) |0.957|-|[@Queequeg](https://github.com/Queequeg92)|[:link:](https://github.com/Queequeg92/DualPathNet)|
 |MLP 256-128-64| None | 0.900| - | [@lianghong](https://github.com/lianghong)| [:link:](https://github.com/lianghong/fashion_mnist-on-mxnet)| 
+|VGG16 26M parameters | None | 0.935| - | [@QuantumLiu](https://github.com/QuantumLiu)|[:link:](https://github.com/QuantumLiu/fashion-mnist-demo-by-Keras) [:link:](https://zhuanlan.zhihu.com/p/28968219)|
 
 ### Other Explorations of Fashion-MNIST
 
