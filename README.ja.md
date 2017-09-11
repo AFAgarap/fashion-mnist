@@ -34,12 +34,12 @@ Fashion-MNIST は、機械学習アルゴリズムのベンチマークのため
 
 データセットをダウンロードするためには直接リンクを使用することができます。データはオリジナルの [MNIST](http://yann.lecun.com/exdb/mnist/) データと同じフォーマットでストアされています。
 
-| 名前  | 内容 | サンプル | サイズ | リンク
-| --- | --- |--- | --- |--- |
-| `train-images-idx3-ubyte.gz`  | 訓練セット画像	  | 60,000|26 MBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz)|
-| `train-labels-idx1-ubyte.gz`  | 訓練セット・ラベル |60,000|29 KBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz)|
-| `t10k-images-idx3-ubyte.gz`  | テストセット画像  | 10,000|4.3 MBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz)|
-| `t10k-labels-idx1-ubyte.gz`  | テストセット・ラベル  | 10,000| 5.1 KBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz)|
+| 名前  | 内容 | サンプル | サイズ | リンク | MD5チェックサム|
+| --- | --- |--- | --- |--- |--- |
+| `train-images-idx3-ubyte.gz`  | 訓練セット画像	  | 60,000|26 MBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz)|`8d4fb7e6c68d591d4c3dfef9ec88bf0d`|
+| `train-labels-idx1-ubyte.gz`  | 訓練セット・ラベル |60,000|29 KBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz)|`25c81989df183df01b3e8a0aad5dffbe`|
+| `t10k-images-idx3-ubyte.gz`  | テストセット画像  | 10,000|4.3 MBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz)|`bef4ecab320f06d8554ea6380940ec79`|
+| `t10k-labels-idx1-ubyte.gz`  | テストセット・ラベル  | 10,000| 5.1 KBytes | [ダウンロード](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz)|`bb300cfdad3c16e7a12a480ee83cd310`|
 
 あるいはこのレポジトリを clone することもできます、データセットは `data/fashion` の下です。この repo はベンチーマークと可視化のための幾つかのスクリプトを含みます。
    
@@ -86,10 +86,15 @@ data.train.next_batch(100)
 ```
 
 ### 他の機械学習ライブラリを使用する
+
+今日まで、以下のライブラリは、組み込みデータセットとして `Fashion-MNIST`を含んでいます。 したがって、自分で`Fashion-MNIST`をダウンロードする必要はありません。 そのAPIに従うだけで、あなたは準備が整いました。
+
 - [Apache MXNet Gluon (master ver.)](https://mxnet.incubator.apache.org/versions/master/api/python/gluon.html#vision)
 - [deeplearn.js](https://pair-code.github.io/deeplearnjs/demos/model-builder/model-builder-demo.html)
 - [Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)
 - [Pytorch](https://github.com/pytorch/vision#mnist)
+- [Keras (master ver.)](https://github.com/fchollet/keras/blob/master/docs/templates/datasets.md#fashion-mnist-database-of-fashion-articles)
+- [Observations](https://github.com/edwardlib/observations/tree/master/observations)
 
 ようこそ私たちに参加して、各機械学習ライブラリ用の`Fashion-MNIST`のサポートを追加してください。
 
@@ -128,6 +133,7 @@ scikit-learn ベースの自動ベンチマーキング・システムを構築�
 |2 Conv Layers net | Normalization, random horizontal flip, random vertical flip, random translation, random rotation. | 0.919 |0.971 | [Kyriakos Efthymiadis](https://github.com/kefth)| [:link:](https://github.com/kefth/fashion-mnist)|
 |2 Conv Layers net <100K parameter | None | 0.925 | 0.992 |[@hardmaru](https://twitter.com/hardmaru) | [:link:](https://github.com/hardmaru/pytorch_notebooks/blob/master/pytorch_tiny_custom_mnist_adam.ipynb)| 
 |3 Conv layers and 2 FC | None | 0.907 | - | [@Cenk Bircanoğlu](https://github.com/cenkbircanoglu) | [:link:](https://github.com/cenkbircanoglu/openface/tree/master/fashion_mnist)|
+|3 Conv+pooling and 2 FC+dropout | None | 0.926 | - | [@Umberto Griffo](https://github.com/umbertogriffo) | [:link:](https://github.com/umbertogriffo/Fashion-mnist-cnn-keras)|
 |GRU+SVM | None| 0.888 | 0.965 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/828fbda0e466dacb1fad66549e0e3022e1c7263a/gru_svm_zalando.py)|
 |GRU+SVM with dropout | None| 0.897 | 0.976 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/58dbe7cd8b0d83e4386cd6896766113b1a9af096/gru_svm_zalando_dropout.py)|
 |WRN40-4 8.9M params | standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips)| 0.967 | - |[@ajbrock](https://github.com/ajbrock) | [:link:](https://github.com/xternalz/WideResNet-pytorch)  [:link:](https://github.com/ajbrock/FreezeOut) |
