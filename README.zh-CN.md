@@ -79,7 +79,12 @@ X_test, y_test = mnist_reader.load_mnist('data/fashion', kind='t10k')
 from tensorflow.examples.tutorials.mnist import input_data
 data = input_data.read_data_sets('data/fashion')
 
-data.train.next_batch(100)
+data.train.next_batch(BATCH_SIZE)
+```
+
+注意，Tensorflow (master ver.) 支持向`read_data_sets`函数传入MNIST数据集的地址。你可以使用： 
+```python
+data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/')
 ```
 
 ### 使用其它机器学习库
@@ -88,8 +93,10 @@ data.train.next_batch(100)
 - [deeplearn.js](https://pair-code.github.io/deeplearnjs/demos/model-builder/model-builder-demo.html)
 - [Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)
 - [Pytorch](https://github.com/pytorch/vision#mnist)
-- [Keras (master ver.)](https://github.com/fchollet/keras/blob/master/docs/templates/datasets.md#fashion-mnist-database-of-fashion-articles)
-- [Observations](https://github.com/edwardlib/observations/tree/master/observations)
+- [Keras](https://keras.io/datasets/#fashion-mnist-database-of-fashion-articles)
+- [Edward](http://edwardlib.org/api/observations/fashion_mnist)
+- [Tensorflow (master ver.)](https://github.com/tensorflow/tensorflow/pull/12983)
+
 
 欢迎你同我们一起，为各个机器学习库增加对`Fashion-MNIST`的支持。
 
@@ -132,7 +139,7 @@ data.train.next_batch(100)
 |3 Conv layers and 2 FC | None | 0.907 | - | [@Cenk Bircanoğlu](https://github.com/cenkbircanoglu) | [:link:](https://github.com/cenkbircanoglu/openface/tree/master/fashion_mnist)|
 |3 Conv+pooling and 2 FC+dropout | None | 0.926 | - | [@Umberto Griffo](https://github.com/umbertogriffo) | [:link:](https://github.com/umbertogriffo/Fashion-mnist-cnn-keras)|
 |GRU+SVM | None| 0.888 | 0.965 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/828fbda0e466dacb1fad66549e0e3022e1c7263a/gru_svm_zalando.py)|
-|GRU+SVM with dropout | None| 0.897 | 0.976 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/58dbe7cd8b0d83e4386cd6896766113b1a9af096/gru_svm_zalando_dropout.py)|
+|GRU+SVM with dropout | None| 0.897 | 0.988 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/58dbe7cd8b0d83e4386cd6896766113b1a9af096/gru_svm_zalando_dropout.py)|
 |WRN40-4 8.9M params | standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips)| 0.967 | - |[@ajbrock](https://github.com/ajbrock) | [:link:](https://github.com/xternalz/WideResNet-pythttps://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/58dbe7cd8b0d83e4386cd6896766113b1a9af096/gru_svm_zalando_dropout.pyorch)  [:link:](https://github.com/ajbrock/FreezeOut) |
 |DenseNet-BC 768K params| standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) | 0.954 | - |[@ajbrock](https://github.com/ajbrock)  | [:link:](https://github.com/bamos/densenet.pytorch)  [:link:](https://github.com/ajbrock/FreezeOut) |
 |MobileNet | augmentation (horizontal flips)| 0.950|- | [@苏剑林](https://github.com/bojone)| [:link:](http://kexue.fm/archives/4556/)|
@@ -143,6 +150,9 @@ data.train.next_batch(100)
 |Dual path network with wide resnet 28-10|standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) |0.957|-|[@Queequeg](https://github.com/Queequeg92)|[:link:](https://github.com/Queequeg92/DualPathNet)|
 |MLP 256-128-64| None | 0.900| - | [@lianghong](https://github.com/lianghong)| [:link:](https://github.com/lianghong/fashion_mnist-on-mxnet)| 
 |VGG16 26M parameters | None | 0.935| - | [@QuantumLiu](https://github.com/QuantumLiu)|[:link:](https://github.com/QuantumLiu/fashion-mnist-demo-by-Keras) [:link:](https://zhuanlan.zhihu.com/p/28968219)|
+|WRN-28-10| standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) | 0.959 | -| [@zhunzhong07](https://github.com/zhunzhong07)|[:link:](https://github.com/zhunzhong07/Random-Erasing)|
+|WRN-28-10 + Random Erasing| standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) | 0.963 | -| [@zhunzhong07](https://github.com/zhunzhong07)|[:link:](https://github.com/zhunzhong07/Random-Erasing)|
+
 
 ### 更多在Fashion-MNIST上的探索和尝试
 
