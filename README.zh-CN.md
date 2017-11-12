@@ -31,6 +31,9 @@
 
 ## 获取数据
 
+[很多的机器学习库](#使用其它机器学习库)已经内置了Fashion-MNIST数据或接口，方便你直接使用。
+
+
 你可以使用以下链接下载这个数据集。`Fashion-MNIST`的数据集的存储方式和命名与[经典MNIST数据集](http://yann.lecun.com/exdb/mnist/)完全一致。
 
 | 名称  | 描述 | 样本数量 | 文件大小 | 链接 | MD5校验和|
@@ -89,15 +92,17 @@ data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnis
 
 ### 使用其它机器学习库
 截止今日，以下软件库中已内置了对`Fashion-MNIST`的支持。你只需要按照他们的文档载入`Fashion-MNIST`即可使用此数据集。
-- [Apache MXNet Gluon (master ver.)](https://mxnet.incubator.apache.org/versions/master/api/python/gluon.html#vision)
+- [Apache MXNet Gluon](https://mxnet.incubator.apache.org/api/python/gluon/data.html)
 - [deeplearn.js](https://pair-code.github.io/deeplearnjs/demos/model-builder/model-builder-demo.html)
 - [Kaggle](https://www.kaggle.com/zalando-research/fashionmnist)
-- [Pytorch](https://github.com/pytorch/vision#mnist)
+- [Pytorch](http://pytorch.org/docs/master/torchvision/datasets.html#fashion-mnist)
 - [Keras](https://keras.io/datasets/#fashion-mnist-database-of-fashion-articles)
 - [Edward](http://edwardlib.org/api/observations/fashion_mnist)
-- [Tensorflow (master ver.)](https://github.com/tensorflow/tensorflow/pull/12983)
+- [Tensorflow](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/datasets/mnist.py#L212)
 - [Torch](https://github.com/mingloo/fashion-mnist)
-
+- [JuliaML](https://github.com/JuliaML/MLDatasets.jl)
+- [Chainer (latest)](https://docs.chainer.org/en/latest/reference/generated/chainer.datasets.get_fashion_mnist.html?highlight=fashion-mnist)
+- [Brine](https://www.brine.io/fashion-mnist/train)
 
 欢迎你同我们一起，为各个机器学习库增加对`Fashion-MNIST`的支持。
 
@@ -116,7 +121,7 @@ data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnis
 - [NodeJS](https://github.com/ApelSYN/mnist_dl)和[这里](https://github.com/cazala/mnist)
 - [Swift](https://github.com/simonlee2/MNISTKit)
 - [R](https://gist.github.com/brendano/39760)和[这里](https://github.com/maddin79/darch)
-- [Matlab](http://ufldl.stanford.edu/wiki/index.php/Using_the_MNIST_Dataset)和[这里](https://de.mathworks.com/matlabcentral/fileexchange/27675-read-digits-and-labels-from-mnist-database?focused=5154133&tab=function)
+- [Matlab](http://ufldl.stanford.edu/wiki/index.php/Using_the_MNIST_Dataset)
 - [Ruby](https://github.com/gbuesing/mnist-ruby-test/blob/master/train/mnist_loader.rb)
 
 
@@ -138,6 +143,7 @@ data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnis
 |2 Conv Layers net | Normalization, random horizontal flip, random vertical flip, random translation, random rotation. | 0.919 |0.971 | [Kyriakos Efthymiadis](https://github.com/kefth)| [:link:](https://github.com/kefth/fashion-mnist)|
 |2 Conv Layers net <100K parameters | None | 0.925 | 0.992 |[@hardmaru](https://twitter.com/hardmaru) | [:link:](https://github.com/hardmaru/pytorch_notebooks/blob/master/pytorch_tiny_custom_mnist_adam.ipynb)| 
 |2 Conv Layers with 3 FC 1.8M parameters | Normalization | 0.932 | 0.994 | [@Xfan1025](https://github.com/Xfan1025) |[:link:](https://github.com/Xfan1025/Fashion-MNIST/blob/master/fashion-mnist.ipynb) |
+|2 Conv Layers 113K parameters | Normalization | 0.922| 0.993 |[Abel G.](https://github.com/abelusha) | [:link:](https://github.com/abelusha/MNIST-Fashion-CNN/blob/master/Fashon_MNIST_CNN_using_Keras_10_Runs.ipynb)|
 |3 Conv layers and 2 FC | None | 0.907 | - | [@Cenk Bircanoğlu](https://github.com/cenkbircanoglu) | [:link:](https://github.com/cenkbircanoglu/openface/tree/master/fashion_mnist)|
 |3 Conv+pooling and 2 FC+dropout | None | 0.926 | - | [@Umberto Griffo](https://github.com/umbertogriffo) | [:link:](https://github.com/umbertogriffo/Fashion-mnist-cnn-keras)|
 |GRU+SVM | None| 0.888 | 0.965 | [@AFAgarap](https://github.com/AFAgarap) | [:link:](https://gist.githubusercontent.com/AFAgarap/92c1c4a5dd771999b0201ec0e7edfee0/raw/828fbda0e466dacb1fad66549e0e3022e1c7263a/gru_svm_zalando.py)|
@@ -154,7 +160,9 @@ data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnis
 |VGG16 26M parameters | None | 0.935| - | [@QuantumLiu](https://github.com/QuantumLiu)|[:link:](https://github.com/QuantumLiu/fashion-mnist-demo-by-Keras) [:link:](https://zhuanlan.zhihu.com/p/28968219)|
 |WRN-28-10| standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) | 0.959 | -| [@zhunzhong07](https://github.com/zhunzhong07)|[:link:](https://github.com/zhunzhong07/Random-Erasing)|
 |WRN-28-10 + Random Erasing| standard preprocessing (mean/std subtraction/division) and augmentation (random crops/horizontal flips) | 0.963 | -| [@zhunzhong07](https://github.com/zhunzhong07)|[:link:](https://github.com/zhunzhong07/Random-Erasing)|
-|Human Performance| Crowd-Sourced evaluation of human performance. 1000 randomly sampled test images, 3 labels per image, majority labelling. | 0.835 | - | Leo  | - 
+|Human Performance| Crowd-sourced evaluation of human (with no fashion expertise) performance. 1000 randomly sampled test images, 3 labels per image, majority labelling. | 0.835 | - | Leo  | - 
+|Capsule Network 8M parameters| Normalization and shift at most 2 pixel and horizontal flip | 0.936 | - | [@XifengGuo](https://github.com/XifengGuo)  | [:link:](https://github.com/XifengGuo/CapsNet-Fashion-MNIST)|
+|HOG+SVM| HOG | 0.926 | - | [@subalde](https://github.com/subalde) | [:link:](https://github.com/subalde/fashion-mnist)|
 
 
 ### 更多在Fashion-MNIST上的探索和尝试
@@ -165,6 +173,22 @@ data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnis
 - [fashion-mnist的gan玩具](http://kexue.fm/archives/4540/)
 - [CGAN output after 5000 steps](https://github.com/a7b23/Conditional-GAN-using-tensorflow-slim)
 - [live demo of Generative Adversarial Network model with deeplearn.js](http://cognitivechaos.com/playground/fashion-gan/)
+- [GAN Playground - Explore Generative Adversarial Nets in your Browser](https://reiinakano.github.io/gan-playground/)
+
+#### 视频教程
+*Machine Learning Meets Fashion* by Yufeng G @ Google Cloud
+
+[![Machine Learning Meets Fashion](doc/img/ae143b2d.png)](https://youtu.be/RJudqel8DVA)
+
+*动手学深度学习* by Mu Li @ Amazon AI
+
+[![MXNet/Gluon中文频道](doc/img/e9514ab1.png)](https://youtu.be/kGktiYF5upk)
+
+Apache MXNet으로 배워보는 딥러닝(Deep Learning) - 김무현 (AWS 솔루션즈아키텍트)
+
+[![Apache MXNet으로 배워보는 딥러닝(Deep Learning)](doc/img/dd83f448.png)](https://youtu.be/H66GDuLsGl4)
+
+
 
 ## 数据可视化
 
@@ -199,6 +223,9 @@ data = input_data.read_data_sets('data/fashion', source_url='http://fashion-mnis
   eprint       = {cs.LG/1708.07747},
 }
 ```
+
+[有谁引用了Fashion-MNIST?](https://scholar.google.de/scholar?hl=en&as_sdt=0%2C5&q=fashion-mnist&btnG=&oq=fas) 
+
 
 ## License
 
